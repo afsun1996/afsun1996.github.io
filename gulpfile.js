@@ -1,28 +1,45 @@
-var gulp = require('gulp'),
-    uglify = require('gulp-uglify'), // 压缩js文件
-    sass = require('gulp-sass'), // 编译sass
-    cleanCSS = require('gulp-clean-css'), // 压缩css文件
-    rename = require('gulp-rename'); // 文件重命名
+// Load plugins
+const gulp = require("gulp");
 
-gulp.task('scripts', function(){
-    gulp.src('dev/js/index.js')
-        .pipe(uglify())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('assets/js'))
+// Copy third party libraries from /node_modules into /vendor
+gulp.task('vendor', function(cb) {
+
+  // Start Bootstrap Clean Blog SCSS
+  gulp.src([
+      './node_modules/startbootstrap-clean-blog/scss/**/*'
+    ])
+    .pipe(gulp.dest('./assets/vendor/startbootstrap-clean-blog/scss'))
+
+  // Start Bootstrap Clean Blog JS
+  gulp.src([
+      './node_modules/startbootstrap-clean-blog/js/clean-blog.min.js',
+      './node_modules/startbootstrap-clean-blog/js/jqBootstrapValidation.js'
+    ])
+    .pipe(gulp.dest('./assets/vendor/startbootstrap-clean-blog/js'))
+
+  // Bootstrap
+  gulp.src([
+      './node_modules/bootstrap/dist/**/*',
+      '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
+      '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
+    ])
+    .pipe(gulp.dest('./assets/vendor/bootstrap'))
+
+  // jQuery
+  gulp.src([
+      './node_modules/jquery/dist/*',
+      '!./node_modules/jquery/dist/core.js'
+    ])
+    .pipe(gulp.dest('./assets/vendor/jquery'))
+
+  // Font Awesome
+  gulp.src([
+      './node_modules/@fortawesome/**/*',
+    ])
+    .pipe(gulp.dest('./assets/vendor'))
+
+  cb();
+
 });
 
-gulp.task('sass', function(){
-    gulp.src('dev/sass/app.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('dev/sass'))
-        .pipe(cleanCSS())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('assets/css'));
-});
-
-gulp.task('watch', function(){
-    gulp.watch('dev/sass/*.scss', ['sass']);
-    gulp.watch('dev/js/*.js', ['scripts']);
-});
-
-gulp.task('default', ['scripts', 'sass', 'watch']);
+gulp.task("default", gulp.parallel('vendor'));
