@@ -1,0 +1,151 @@
+# 记录配置阿里云Centos7服务配置
+
+## 配置Mysql数据库
+
+### 安装
+
+下载mysql的repo源
+
+```shell
+wget http://repo.mysql.com//mysql57-community-release-el7-7.noarch.rpm
+```
+
+安装
+
+```shell
+rpm -ivh mysql57-community-release-el7-7.noarch.rpm
+yum install mysql-server
+yum install mysql-devel
+yum install mysql
+```
+
+安装完成后,控制命令
+
+```shell
+systemctl start mysqld #开启mysql
+systemctl restrt mysql #重启
+systemctl stop mysql   #关闭
+systemctl status mysqld  #mysql状态
+systemctl enable mysqld  #设置开机自启动
+```
+
+### 配置
+
+yum命令安装会设置一个默认的密码,可以通过命令获取
+
+```shell
+ cat /var/log/mysqld.log |grep pass
+```
+
+![](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/20190908134017.png)
+
+由此可以看到默认的初始密码
+
+再通过命令进入mysql:
+
+```
+mysql -uroot -p 
+```
+
+此时发生错误:
+
+`Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.soc`
+
+解决方案:
+
+1. 授权给/var/lib/mysql 权限
+2. 打开/etc/my.cnf 在[mysqld]添加
+
+![](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/20190908140400.png)
+
+​		然后再mkdir /data/mydata 创建文件夹
+
+#### 修改密码
+
+修改密码规范
+
+```mysql
+set global validate_password_policy=0; 
+
+set global validate_password_length=4;
+```
+
+修改密码
+
+```mysql
+update mysql.user set authentication_string=password('your password') where user='root';
+
+flush privileges;
+```
+
+登录mysql执行命令可能会出现这个报错:
+
+ `You must reset your password using ALTER USER statement before executing this statement`
+
+这是因为密码的时间过期了
+
+```mysql
+set password = password('your new password');
+
+alter user 'root'@'localhost' password expire never;
+```
+
+#### 设置外部可访问
+
+```mysql
+grant all privileges on *.* 'root@%' identified by '密码' with grant option
+flush privileges;
+```
+
+### 阿里云安全策略配置
+
+![](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/20190908141630.png)
+
+![](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/20190908141719.png)
+
+## Redis安装配置
+
+可以通过yum直接安装
+
+```shell
+yum -install redis
+```
+
+安装完成以后通过 
+
+```shell
+redis-cli 
+```
+
+看看是否能进入redis客户端,如果进入 输入`ping` 如果返回`pong`则说明成功
+
+### 配置密码和一些配置
+
+进入redis配置文件
+
+```shell
+vim /etc/redis.conf
+```
+
+搜索pass
+
+```shell
+/pass
+```
+
+找到下图这个字段
+
+![](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/20190908142310.png)
+
+requrepass 后面的改成要设置的密码
+
+此配置文件下
+
+1. bind 字段要设置成0.0.0.0 不然无非访问
+2. protected-mode 保护模式关闭
+3. daemonize 设置成yes 
+
+### 阿里云安全策略配置
+
+如上
+
