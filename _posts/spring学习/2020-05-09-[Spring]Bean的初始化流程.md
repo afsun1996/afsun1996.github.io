@@ -5,8 +5,6 @@ layout: post
 author: "afsun"
 header-style: text
 hidden: true
-categories:
-  - Spring源码
 tags:
   - Spring
 ---

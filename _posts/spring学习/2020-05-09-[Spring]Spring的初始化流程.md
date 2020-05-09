@@ -1,6 +1,6 @@
 ---
 title: "「Spring」Spring的初始化流程"
-subtitle: "Spring的初始化流程,源码分析"
+subtitle: "Bean的初始化流程"
 layout: post
 author: "afsun"
 header-style: text
