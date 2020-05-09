@@ -1,5 +1,13 @@
-categories:
-- Spring
+---
+title: "「Spring」Bean的初始化流程"
+subtitle: "Spring的初始化流程,源码分析"
+layout: post
+author: "afsun"
+header-style: text
+hidden: true
+tags:
+  - Spring
+---
 # Bean的初始化和获取
 
 在AbstractApplicationContext.refresh方法中的`finishBeanFactoryInitialization`()方法,去初始化非`lazy`且`Singleton`的Bean

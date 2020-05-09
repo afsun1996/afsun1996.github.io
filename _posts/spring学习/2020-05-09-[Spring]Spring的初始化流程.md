@@ -1,5 +1,13 @@
-categories:
-- Spring
+---
+title: "「Spring」Spring的初始化流程"
+subtitle: "Spring的初始化流程,源码分析"
+layout: post
+author: "afsun"
+header-style: text
+hidden: true
+tags:
+  - Spring
+---
 # Spring的初始化
 
 分析 `AnnotationConfigApplicationContext` new实例化的过程
