@@ -1,10 +1,8 @@
 ---
 title: "「Spring」AOP的实现"
 subtitle: "Spring中AOP的实现原理"
-layout: post
 author: "afsun"
 header-style: text
-hidden: true
 tags:
   - Spring
 ---
