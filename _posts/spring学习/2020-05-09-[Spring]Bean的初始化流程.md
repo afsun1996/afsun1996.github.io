@@ -1,3 +1,5 @@
+categories:
+- Spring
 # Bean的初始化和获取
 
 在AbstractApplicationContext.refresh方法中的`finishBeanFactoryInitialization`()方法,去初始化非`lazy`且`Singleton`的Bean

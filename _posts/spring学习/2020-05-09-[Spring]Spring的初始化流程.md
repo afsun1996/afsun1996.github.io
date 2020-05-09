@@ -1,3 +1,5 @@
+categories:
+- Spring
 # Spring的初始化
 
 分析 `AnnotationConfigApplicationContext` new实例化的过程
