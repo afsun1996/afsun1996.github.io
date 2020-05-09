@@ -1,14 +1,5 @@
-.DS_Store
-*/.DS_Store
-
-node_modules
-
 _site
-### Example user template template
-### Example user template
-
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
+.sass-cache
+node_modules
+Gemfile.lock
+*.gem
