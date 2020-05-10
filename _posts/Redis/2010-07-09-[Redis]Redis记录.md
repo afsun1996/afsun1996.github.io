@@ -2,6 +2,7 @@
 title: "「Redis」redis的基础操作"
 subtitle: "Redis的基础操作命令备忘录"
 layout: post
+header-img:post-bg-digital-native.jpg
 author: "afsun"
 header-style: text
 hidden: true
