@@ -4,7 +4,7 @@ subtitle: "Bean的初始化流程"
 layout: post
 author: "afsun"
 header-style: text
-header-img:post-bg-digital-native.jpg
+header-img:"img/post-bg-alitrip.jpg"
 tags:
   - Spring
 ---
