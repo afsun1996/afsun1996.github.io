@@ -3,7 +3,6 @@ title: "「Spring」AOP的实现"
 subtitle: "Spring中AOP的实现原理"
 author: "afsun"
 header-style: text
-header-img:"img/post-bg-alitrip.jpg"
 tags:
   - Spring
 ---
