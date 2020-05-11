@@ -10,16 +10,16 @@ tags:
 ---
 # Redis
 
-[基本操作](../2010-07-09-[Redis]Redis基础操作.md)
+[基本操作](../2010-07-09-Redis-Redis基础操作)
 
-[高可用方案](../2020-05-11-[Redis]高可用方案)
+[高可用方案](../2020-05-11-Redis-高可用方案)
 
-[分布式锁](../2020-05-11-[Redis]分布式锁)
+[分布式锁](../2020-05-11-Redis-分布式锁)
 
-[限流](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Untitled%207b13dd0fd31640ba9f2cd1510e7a268d.md)
+[限流](../2020-05-11-Redis-Redis实现限流)
 
-[GeoHash](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/GeoHash%20b6c943c8abd64fe1952a2f6f20ebef40.md)
+[GeoHash](../2020-05-11-Redis-高级特性GeoHash)
 
-[布隆过滤器](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Untitled%206d90cdad94f441f3ad104eb92222b1f2.md)
+[布隆过滤器](../2020-05-11-Redis-高级特性布隆过滤器)
 
-[持久化](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Untitled%202ff6b3f23a204d9997084d5f2afd7368.md)
+[持久化](../2020-05-11-Redis-持久化机制)
