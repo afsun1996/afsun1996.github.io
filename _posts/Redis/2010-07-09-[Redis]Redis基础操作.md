@@ -4,7 +4,6 @@ subtitle: "Redis的基础操作命令备忘录"
 layout: post
 author: "afsun"
 header-style: text
-hidden: true
 tags:
   - Redis
 ---

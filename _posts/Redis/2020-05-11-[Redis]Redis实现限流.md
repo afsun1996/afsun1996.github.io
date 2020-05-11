@@ -4,7 +4,6 @@ subtitle: ""
 layout: post
 author: "afsun"
 header-style: text
-hidden: true
 tags:
   - Redis
 ---
