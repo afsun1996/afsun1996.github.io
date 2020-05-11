@@ -10,13 +10,11 @@ tags:
 ---
 # Redis
 
-[基本操作](./2010-07-09-[Redis]Redis基础操作.md)
+[基本操作](../2010-07-09-[Redis]Redis基础操作.md)
 
-[高可用方案](./2020-05-11-[Redis]高可用方案.md)
+[高可用方案](../2020-05-11-[Redis]高可用方案.md)
 
-[Redisson&Jedis](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Redisson%20Jedis%2028242a13177a468baeb7c5d1e3dbf032.md)
-
-[分布式锁](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Untitled%202f9ba00948494b06a071896e265b3d90.md)
+[分布式锁](../2020-05-11-[Redis]分布式锁)
 
 [限流](Redis%2048e8acb1e9cd4319a20dcbb7e83ad6b7/Untitled%207b13dd0fd31640ba9f2cd1510e7a268d.md)
 
