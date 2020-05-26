@@ -13,9 +13,6 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-            <div id="toc">
-                {:toc}
-            </div>
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -28,6 +25,8 @@ layout: default
                 {% endif %}
 
 				{{ content }}
+
+                <body  data-spy="scroll" data-target="#markdown-toc" data-offset="20">
 
                 <hr style="visibility: hidden;">
 
@@ -98,12 +97,9 @@ layout: default
         </div>
     </div>
 </article>
+<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#toc').toc();
-    });
-</script>
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
