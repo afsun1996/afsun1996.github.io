@@ -50,6 +50,10 @@ markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
   math_engine: null
+  extensions:
+    - autolink
+    - footnotes
+    - smart
   use_coderay: true
   syntax_highlighter_opts:
     span:
