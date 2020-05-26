@@ -97,6 +97,11 @@ layout: default
     </div>
 </article>
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#toc').toc();
+    });
+</script>
 <!-- add support for mathjax by voleking-->
 {% if page.mathjax %}
   {% include mathjax_support.html %}
@@ -163,12 +168,6 @@ layout: default
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#toc').toc();
-    });
-</script>
-
 
 <style>
     /* place left on bigger screen */
