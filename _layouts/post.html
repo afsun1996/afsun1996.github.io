@@ -19,7 +19,7 @@ layout: default
                 col-md-10 col-md-offset-1
                 post-container">
                 <div class = "toc">
-                    {% include toc.html html=content %}
+                    {% include toc.html html=content class="live" %}
                 </div>
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
@@ -178,11 +178,15 @@ layout: default
     }
     .toc {
         width: 300px;
-        position: fixed;
+        /*position: fixed;*/
         top: 70px;
-        left: 20px;
+        left: 10px;
         overflow: auto;
         font-size: 12px;
+        font-family: "Microsoft YaHei";
+        color: black;
     }
 </style>
+<link rel="stylesheet" href="../cssul/css/normalize.css">
+<link rel="stylesheet" href="../cssul/css/style.css" media="screen" type="text/css" />
 {% endif %}
