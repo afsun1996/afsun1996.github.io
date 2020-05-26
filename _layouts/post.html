@@ -28,6 +28,7 @@ layout: default
 				{{ content }}
 
                 <hr style="visibility: hidden;">
+                <div id="toc"></div>
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -104,6 +105,9 @@ layout: default
 {% if site.netease_comment %}
 <!-- 网易云跟帖JS代码 start -->
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="../js/toc.js"></script>
+
 <script>
   var cloudTieConfig = {
     url: document.location.href, 
@@ -159,6 +163,13 @@ layout: default
         anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
     })
 </script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#toc').toc();
+    });
+</script>
+
+
 <style>
     /* place left on bigger screen */
     @media all and (min-width: 800px) {
