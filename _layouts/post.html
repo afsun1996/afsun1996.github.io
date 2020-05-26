@@ -18,7 +18,7 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-                <div class = "toc" style="position: fixed;top: 70px;left: 20px;overflow: scroll;font-size: 16px;">
+                <div class = "toc">
                     {% include toc.html html=content %}
                 </div>
                 <!-- Multi-Lingual -->
@@ -175,6 +175,14 @@ layout: default
             font-size: 1.1em;
             margin-top : -0.1em;
         }
+    }
+    .toc {
+        width: 300px;
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        overflow: auto;
+        font-size: 12px;
     }
 </style>
 {% endif %}
