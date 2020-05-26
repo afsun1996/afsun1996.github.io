@@ -11,6 +11,9 @@ layout: default
 
 <!-- Post Content -->
 <article>
+    <div class = "toc">
+        {% include toc.html html=content class="toc-content" %}
+    </div>
     <div class="container">
         <div class="row">
     <!-- Post Container -->
@@ -18,9 +21,6 @@ layout: default
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-                <div class = "toc">
-                    {% include toc.html html=content class="live" %}
-                </div>
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
@@ -182,8 +182,11 @@ layout: default
         top: 70px;
         left: 10px;
         overflow: auto;
-        font-size: 12px;
+        font-size: 13px;
         font-family: "Microsoft YaHei";
+        font-weight: bold;
+    }
+    .toc-content {
         color: black;
     }
 </style>
