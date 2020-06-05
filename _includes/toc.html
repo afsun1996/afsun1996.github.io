@@ -29,7 +29,7 @@
     {% endcomment %}
 
     {% capture my_toc %}{% endcapture %}
-    {% assign orderedList = include.ordered | default: true %}
+    {% assign orderedList = include.ordered | default: false %}
     {% assign skipNoIDs = include.skipNoIDs | default: false %}
     {% assign minHeader = include.h_min | default: 1 %}
     {% assign maxHeader = include.h_max | default: 6 %}
