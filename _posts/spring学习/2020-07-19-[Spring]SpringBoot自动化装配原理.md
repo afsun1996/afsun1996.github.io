@@ -64,6 +64,8 @@ sun.praticle.client1是SpringBootApplication的主类的包路径。PackageImpor
 
 ![image-20200802113317515](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/image-20200802113317515.png)
 
+
+
 ## RedisTemplate自动装配的跟踪
 
 ![image-20200802113644883](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/image-20200802113644883.png)进入到`RedisAutoConfiguration`代码中阅读：
@@ -96,5 +98,4 @@ sun.praticle.client1是SpringBootApplication的主类的包路径。PackageImpor
 
 ​	从@EnableAutoConfiguration注解进入到AutoConfigurationImportSelector中去，获取所有JAR包下的META-INF/Spring.factories文件中的键值对。将Key = org.springframework.boot.autoconfigure.EnableAutoConfiguration的Value提取出来，通过@Conditonal注解来过滤，获取到可以注入到Spring中的Bean对象，然后注入。
 
-
-
+​	其实SpringBoot主要依赖的是@Import的注解，@Conditionalxx注解和@EnableConfigurationProperties注解来实现自动装配和约定大于编写的功能。
