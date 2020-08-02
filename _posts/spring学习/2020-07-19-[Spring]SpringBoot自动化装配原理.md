@@ -1,5 +1,3 @@
-# SpringBoot自动化装配源码阅读
-
 ```
 ---
 title: "「Spring」SpringBoot自动化装配源码阅读"
