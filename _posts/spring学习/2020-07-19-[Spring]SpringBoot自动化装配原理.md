@@ -1,4 +1,3 @@
-```
 ---
 title: "「Spring」SpringBoot自动化装配源码阅读"
 subtitle: "SpringBoot自动化装配源码阅读"
@@ -8,7 +7,6 @@ header-style: text
 tags:
   - Spring
 ---
-```
 
 基于约定大于配置的原则来实现自动化装配。
 
