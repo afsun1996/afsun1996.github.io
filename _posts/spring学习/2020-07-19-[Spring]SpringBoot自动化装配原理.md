@@ -20,7 +20,7 @@ tags:
 
 可以看到这个注解上面总共包含了3个注解：`@SpringBotConfiguration`，`@EnableAutoConfiguration`，`@ComponentScan`
 
-![image-20200801162419950](C:\Users\afsun\AppData\Roaming\Typora\typora-user-images\image-20200801162419950.png)1 `@SpringBotConfiguration`，这个注解其实就是一个`@Configuration的`**包装**注解，将被@SpringBootConfiguration修饰的类当作是一个Configuration，在Spring初始化的时候放入到Spring的容器中去。
+![image-20200801162419950](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/image-20200801162419950.png)1 `@SpringBotConfiguration`，这个注解其实就是一个`@Configuration的`**包装**注解，将被@SpringBootConfiguration修饰的类当作是一个Configuration，在Spring初始化的时候放入到Spring的容器中去。
 
 @ComponentScan显而易见就是把当前类目录和子目录下的所有的Bean都放入Spring容器中去，起到扫描功能。
 
@@ -34,7 +34,7 @@ tags:
 
 阅读`AutoConfigurationPackages.Registrar`并调试代码：
 
-![image-20200801204653750](C:\Users\afsun\AppData\Roaming\Typora\typora-user-images\image-20200801204653750.png)
+![image-20200801204653750](https://tuchuansun.oss-cn-hangzhou.aliyuncs.com/image-20200801204653750.png)
 
 sun.praticle.client1是SpringBootApplication的主类的包路径。PackageImports这个类的数据结构主要是将被@AutoConfigurationPackage修饰的类的root包路径包装起来放入到Spring中管理
 
